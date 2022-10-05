@@ -17,7 +17,6 @@ jobs:
       uses: rtCamp/action-slack-notify@v2
       env:
         SLACK_WEBHOOK: ${{ secrets.PR_SLACK_WEBHOOK }}
-        SLACK_CHANNEL: pullrequest
         SLACK_COLOR: 'good'
         SLACK_ICON: ${{ github.event.pull_request.user.avatar_url }}
         SLACK_MESSAGE: ${{ github.event.pull_request.body }} - ${{ github.event.pull_request.html_url }}
