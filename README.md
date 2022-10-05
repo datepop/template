@@ -31,3 +31,8 @@ Github -> Settings -> Secrets -> Actions -> New repository secret
 위 설정을 한다면
 - 새 브랜치를 만든다면 관련된 지라 티켓을 찾아서 ToDo -> InProgress로 옮겨줌.
 - develop이나 release브랜치로 PR이 머지된다면 InProgress -> Done로 옮겨줌.
+
+
+## Github action 관련 추가 기능
+
+[여기](https://github.com/datepop/template/blob/main/docs/github_action.md)에서 확인!
