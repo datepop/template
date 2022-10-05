@@ -1,0 +1,26 @@
+name: "Pull Request Notification"
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - 'releases/**'
+      - 'develop'
+
+jobs:
+  slackNotification:
+    name: PR Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.PR_SLACK_WEBHOOK }}
+        SLACK_CHANNEL: pullrequest
+        SLACK_COLOR: 'good'
+        SLACK_ICON: ${{ github.event.pull_request.user.avatar_url }}
+        SLACK_MESSAGE: ${{ github.event.pull_request.body }} - ${{ github.event.pull_request.html_url }}
+        SLACK_TITLE: ${{ github.event.pull_request.title }}
+        SLACK_USERNAME: ${{ github.event.pull_request.user.login }}
+
