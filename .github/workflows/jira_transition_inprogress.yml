@@ -3,6 +3,7 @@ name: Jira Transition to InProgress
 on:
   create:
     branches:
+      - 'feature/**'
       - 'feat/**'
       - 'fix/**'
       - 'hotfix/**'
