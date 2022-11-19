@@ -5,10 +5,8 @@ on:
     types:
       - closed
     branches:
-      - 'feature/**'
-      - 'feat/**'
-      - 'fix/**'
-      - 'hotfix/**'
+      - 'release/**'
+      - 'develop'
 
 jobs:
   jiraTicketToDoneWhenMerged:
